@@ -1,6 +1,7 @@
 # CSMapi
 ## Dependency library
-  -libcrul
-  -libjson-c
+  1.libcrul  
+  2.libjson-c
 ## Example
-  make;./main
+  make
+  ./main
