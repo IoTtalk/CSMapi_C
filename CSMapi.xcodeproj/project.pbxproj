@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E216BF41DD5852A00E037E6 /* libjson-c.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E216BF31DD5852A00E037E6 /* libjson-c.2.dylib */; };
 		0ECE543D1DC106B5006C021F /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0ECE543C1DC106B5006C021F /* main.c */; };
+		0ECE54451DC106DE006C021F /* CSMapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 0ECE54431DC106DE006C021F /* CSMapi.c */; };
+		0ED07C021DC1BA3500E8C28F /* libcurl.4.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED07C011DC1BA3500E8C28F /* libcurl.4.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +26,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E216BF31DD5852A00E037E6 /* libjson-c.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libjson-c.2.dylib"; path = "../../../../usr/local/Cellar/json-c/0.12/lib/libjson-c.2.dylib"; sourceTree = "<group>"; };
 		0ECE54391DC106B5006C021F /* CSMapi */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CSMapi; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECE543C1DC106B5006C021F /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		0ECE54431DC106DE006C021F /* CSMapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CSMapi.c; sourceTree = "<group>"; };
+		0ECE54441DC106DE006C021F /* CSMapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSMapi.h; sourceTree = "<group>"; };
+		0ED07C011DC1BA3500E8C28F /* libcurl.4.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurl.4.tbd; path = usr/lib/libcurl.4.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E216BF41DD5852A00E037E6 /* libjson-c.2.dylib in Frameworks */,
+				0ED07C021DC1BA3500E8C28F /* libcurl.4.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +52,7 @@
 			children = (
 				0ECE543B1DC106B5006C021F /* CSMapi */,
 				0ECE543A1DC106B5006C021F /* Products */,
+				0ED07C001DC1BA3500E8C28F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +68,19 @@
 			isa = PBXGroup;
 			children = (
 				0ECE543C1DC106B5006C021F /* main.c */,
+				0ECE54431DC106DE006C021F /* CSMapi.c */,
+				0ECE54441DC106DE006C021F /* CSMapi.h */,
 			);
 			path = CSMapi;
+			sourceTree = "<group>";
+		};
+		0ED07C001DC1BA3500E8C28F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E216BF31DD5852A00E037E6 /* libjson-c.2.dylib */,
+				0ED07C011DC1BA3500E8C28F /* libcurl.4.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -88,7 +109,7 @@
 		0ECE54311DC106B5006C021F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "陳立寬";
 				TargetAttributes = {
 					0ECE54381DC106B5006C021F = {
@@ -119,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ECE54451DC106DE006C021F /* CSMapi.c in Sources */,
 				0ECE543D1DC106B5006C021F /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +166,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -191,6 +214,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -216,6 +240,15 @@
 		0ECE54411DC106B5006C021F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = c89;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/usr/local/Cellar/json-c/0.12/lib",
+				);
+				OTHER_CFLAGS = (
+					"-I",
+					"/usr/local/Cellar/json-c/0.12/include",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -223,6 +256,15 @@
 		0ECE54421DC106B5006C021F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = c89;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/usr/local/Cellar/json-c/0.12/lib",
+				);
+				OTHER_CFLAGS = (
+					"-I",
+					"/usr/local/Cellar/json-c/0.12/include",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -246,6 +288,7 @@
 				0ECE54421DC106B5006C021F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
