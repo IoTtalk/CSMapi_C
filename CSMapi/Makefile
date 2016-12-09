@@ -1,4 +1,4 @@
-CC = clang
+CC = gcc
 JSON_HEADER_DIR = /usr/local/include/json-c
 CURL_HEADER_DIR = /usr/local/include/curl
 LIB_DIR = /usr/local/lib
